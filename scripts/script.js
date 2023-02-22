@@ -4,6 +4,9 @@ function showCharacters() {
             return response.json();
         })
         .then(function (json) {
+
+            console.log(json.results[0]);
+
             for(let i = 0; i < json.results.length; i++) {
                 document.getElementById("characters").innerHTML += getCharacterCard(json.results[i]);
             }
@@ -47,6 +50,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
     searchBar.addEventListener('input', debounce(function() {
         searchName();
     }, 250));
+
+    /**
+     * Infinite Scrolling
+     */
     window.onscroll = () => {
         if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight - 200) {
             nextPage();

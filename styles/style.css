@@ -7,11 +7,9 @@ body {
     display: grid;
     grid-template-rows: 1fr auto;
     grid-row-gap: 1vw;
-    grid-template-columns: auto;
     grid-template-areas:
     "header"
-    "filters"
-    "main";
+    "bodymain";
 }
 
 header {
@@ -44,8 +42,23 @@ header {
     font-family: "Montserrat";
 }
 
+.body-main {
+    grid-area: bodymain;
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vw;
+}
+
+aside {
+    text-align: left;
+    background-color: #efdfd4;
+    padding: 2vh 2vw;
+    border-radius: 25px;
+    height: fit-content;
+}
+
 main {
-    grid-area: main;
     display: grid;
     grid-template-columns: repeat(4, minmax(50px, 1fr));
     grid-column-gap: 1vw;
