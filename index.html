@@ -11,7 +11,7 @@
 <body>
 <header>
     <img class="header-image" src="media/logo.png" alt="Rick & Morty text logo."/>
-    <input class="header-searchbar" type="text" placeholder="Find a Character...">
+    <input id="searchBar" class="header-searchbar" type="text" placeholder="Find a Character..." onchange="searchName()">
 </header>
 
 <main id="characters">
@@ -19,7 +19,7 @@
 </main>
 
 <footer>
-
+    <button onclick="showCharacters()">Show More</button>
 </footer>
 </body>
 </html>

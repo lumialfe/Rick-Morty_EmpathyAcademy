@@ -58,6 +58,12 @@ main {
     grid-row-gap: 1vw;
 }
 
+@media only screen and (max-width: 640px) {
+    main {
+        grid-template-columns: repeat(2, minmax(50px, 1fr));
+    }
+}
+
 .main-card {
     background-color: white;
     padding: 15px;
