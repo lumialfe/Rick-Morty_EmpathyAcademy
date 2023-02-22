@@ -1,6 +1,6 @@
 body {
     background-color: #fff3e5;
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 2vh 1vw;
     text-align: center;
@@ -39,7 +39,7 @@ header {
     background: white url("../media/search-icon.svg") no-repeat 15px center;
     background-size: 1rem;
 
-    font-family: "Montserrat", Arial;
+    font-family: "Montserrat", sans-serif;
 }
 
 .body-main {
