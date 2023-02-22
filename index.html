@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Rick & Morty</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.freepnglogos.com/uploads/rick-and-morty-png/rick-and-morty-rick-face-kushmastafresh-deviantart-19.png"/>
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script src="scripts/script.js"></script>
 </head>
 <body>
 <header>
     <a href="index.html"><img class="header-image" src="media/logo.png" alt="Rick & Morty text logo."/></a>
-    <input id="searchBar" class="header-searchbar" type="text" placeholder="Find a Character...">
+    <label for="searchBar"></label>
+    <input id="searchBar" class="header-searchbar" type="text" placeholder="Find a Character..."/>
 </header>
 <div class="body-main">
     <aside>
         <h3>Filter by:</h3>
         <hr/>
+        <form id="filters">
         <h4>Gender</h4>
-        <input type="checkbox">Male</input>
-
-        <input type="checkbox">Female</input>
+        <input id = "radioMale" class="aside-filters" type="radio" name="gender"/>
+        <label for="radioMale">Male</label>
+        <br/>
+        <input id = "radioFemale" class="aside-filters" type="radio" name="gender"/>
+        <label for="radioFemale">Female</label>
 
         <h4>Status</h4>
-        <input type="checkbox">Alive</input>
-
-        <input type="checkbox">Dead</input>
-
+        <input id="radioAlive" class="aside-filters" type="radio" name="status"/>
+        <label for="radioAlive">Alive</label>
+        <br/>
+        <input id="radioDead" class="aside-filters" type="radio" name="status"/>
+        <label for="radioDead">Dead</label>
         <hr/>
         <button id="aside-button">Clear All</button>
+        </form>
     </aside>
     <main id="characters">
     </main>

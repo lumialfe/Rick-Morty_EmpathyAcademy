@@ -15,7 +15,7 @@ function showCharacters() {
 }
 
 function getCharacterCard(character) {
-    let img = "<img class='card-image' src='" + character.image + "'/>"
+    let img = "<img class='card-image' src='" + character.image + "' alt='" + character.name + "'/>"
     let name = "<p class='card-name'>" + character.name + "</p>"
     let description = "<p class='card-text'>Gender: " + character.gender + "<br/>"
         + "Status: " + character.status + "</br>"
@@ -34,6 +34,11 @@ function nextPage() {
     currentPage++;
     showCharacters();
 }
+
+function clearFilters() {
+    document.getElementById("filters").reset();
+    showCharacters();
+}
 const debounce = (func, delay) => {
     let debounceTimer
     return function() {
@@ -45,7 +50,7 @@ const debounce = (func, delay) => {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', function() {
     let searchBar = document.getElementById("searchBar");
     searchBar.addEventListener('input', debounce(function() {
         searchName();
@@ -59,9 +64,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
             nextPage();
         }
     };
+
+    document.getElementById("aside-button").addEventListener("click", function () {
+        clearFilters();
+    })
 })
 
 
 let currentPage = 1;
 let currentName = "";
-showCharacters("");
+showCharacters();

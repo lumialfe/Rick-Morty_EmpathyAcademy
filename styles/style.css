@@ -39,7 +39,7 @@ header {
     background: white url("../media/search-icon.svg") no-repeat 15px center;
     background-size: 1rem;
 
-    font-family: "Montserrat";
+    font-family: "Montserrat", Arial;
 }
 
 .body-main {
@@ -53,9 +53,12 @@ header {
 aside {
     text-align: left;
     background-color: #efdfd4;
-    padding: 2vh 2vw;
+    padding: 1vh 1vw;
     border-radius: 25px;
     height: fit-content;
+}
+
+.aside-filters {
 }
 
 main {
@@ -100,6 +103,14 @@ main {
     text-align: left;
 }
 
-.footer-button {
+button {
+    background-color: white;
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+}
 
+button:hover {
+    color: #efdfd4;
 }
