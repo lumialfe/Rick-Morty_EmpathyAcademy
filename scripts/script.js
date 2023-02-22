@@ -26,6 +26,11 @@ function searchName() {
     document.getElementById("characters").innerHTML = "";
     showCharacters();
 }
+
+function nextPage() {
+    currentPage++;
+    showCharacters();
+}
 const debounce = (func, delay) => {
     let debounceTimer
     return function() {
@@ -42,6 +47,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
     searchBar.addEventListener('input', debounce(function() {
         searchName();
     }, 250));
+    window.onscroll = () => {
+        if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight - 200) {
+            nextPage();
+        }
+    };
 })
 
 
