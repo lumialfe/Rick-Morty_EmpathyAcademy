@@ -4,7 +4,6 @@ function showCharacters() {
             return response.json();
         })
         .then(function (json) {
-            console.log(json.results[0]);
             for(let i = 0; i < json.results.length; i++) {
                 document.getElementById("characters").innerHTML += getCharacterCard(json.results[i]);
             }
@@ -27,6 +26,24 @@ function searchName() {
     document.getElementById("characters").innerHTML = "";
     showCharacters();
 }
+const debounce = (func, delay) => {
+    let debounceTimer
+    return function() {
+        const context = this
+        const args = arguments
+        clearTimeout(debounceTimer)
+        debounceTimer
+            = setTimeout(() => func.apply(context, args), delay)
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    let searchBar = document.getElementById("searchBar");
+    searchBar.addEventListener('input', debounce(function() {
+        searchName();
+    }, 250));
+})
+
 
 let currentPage = 1;
 let currentName = "";
