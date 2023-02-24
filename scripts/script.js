@@ -1,12 +1,11 @@
 function showCharacters() {
-    fetch("https://rickandmortyapi.com/api/character?name=" + currentName + "&page=" + currentPage)
+    let query = "https://rickandmortyapi.com/api/character?name=" + currentName + "&page=" + currentPage +
+        "&gender=" + currentGender + "&status=" + currentStatus
+    fetch(query)
         .then(function (response) {
             return response.json();
         })
         .then(function (json) {
-
-            console.log(json.results[0]);
-
             for(let i = 0; i < json.results.length; i++) {
                 document.getElementById("characters").innerHTML += getCharacterCard(json.results[i]);
             }
@@ -37,6 +36,8 @@ function nextPage() {
 
 function clearFilters() {
     document.getElementById("filters").reset();
+    currentGender = "";
+    currentStatus = "";
     showCharacters();
 }
 const debounce = (func, delay) => {
@@ -62,30 +63,61 @@ document.addEventListener('DOMContentLoaded', function() {
     window.onscroll = () => {
         if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight - 200) {
             nextPage();
-            let mybutton = document.getElementById("myBtn");
-            mybutton.style.display = "block";
+            let topBtn = document.getElementById("topBtn");
+            topBtn.style.display = "block";
         }
 
         //TODO does not work
         if ((window.innerHeight + Math.ceil(window.pageYOffset)) <= 500) {
             nextPage();
-            let mybutton = document.getElementById("myBtn");
-            mybutton.style.display = "none";
+            let topBtn = document.getElementById("topBtn");
+            topBtn.style.display = "none";
         }
     };
 
     document.getElementById("aside-button").addEventListener("click", function () {
         clearFilters();
     })
+
+    assignFilters();
 })
 function topFunction() {
-    let mybutton = document.getElementById("myBtn");
+    let topBtn = document.getElementById("topBtn");
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    mybutton.style.display = "none";
+    topBtn.style.display = "none";
+}
+//TODO it does not want to work
+function assignFilters() {
+    document.getElementById("radioAlive").onclick = function () { updateFilters(); };
+    document.getElementById("radioDead").onclick = function () { updateFilters(); };
+    document.getElementById("radioMale").onclick = function () { updateFilters(); };
+    document.getElementById("radioFemale").onclick = function () { updateFilters(); };
+}
+
+function updateFilters() {
+    currentPage = 1;
+    document.getElementById("characters").innerHTML = "";
+
+    if (document.getElementById("radioAlive").checked) {
+        currentStatus = "alive";
+    } else if (document.getElementById("radioDead").checked) {
+        currentStatus = "dead";
+    }
+
+    if (document.getElementById("radioMale").checked) {
+        currentGender = "male";
+    } else if (document.getElementById("radioFemale").checked) {
+        currentGender = "female";
+    }
+
+    showCharacters();
 }
 
 
 let currentPage = 1;
 let currentName = "";
+let currentGender = "";
+let currentStatus = "";
+
 showCharacters();

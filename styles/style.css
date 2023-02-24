@@ -58,9 +58,6 @@ aside {
     height: fit-content;
 }
 
-.aside-filters {
-}
-
 main {
     display: grid;
     grid-template-columns: repeat(4, minmax(50px, 1fr));
@@ -123,7 +120,7 @@ button:hover {
     color: #efdfd4;
 }
 
-#myBtn {
+#topBtn {
     width: 50px;
     height: 50px;
     padding: 0;
@@ -138,7 +135,7 @@ button:hover {
     background-size: cover;
 }
 
-#myBtn:hover {
+#topBtn:hover {
     width: 55px;
     height: 55px;
 }
