@@ -72,6 +72,14 @@ main {
     main {
         grid-template-columns: repeat(2, minmax(50px, 1fr));
     }
+
+    .body-main {
+        grid-template-columns: 100%;
+    }
+
+    aside {
+        display: none;
+    }
 }
 
 .main-card {
@@ -113,4 +121,24 @@ button {
 
 button:hover {
     color: #efdfd4;
+}
+
+#myBtn {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    left: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background: url("../media/backtop.png") no-repeat center;
+    background-size: cover;
+}
+
+#myBtn:hover {
+    width: 55px;
+    height: 55px;
 }

@@ -62,6 +62,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.onscroll = () => {
         if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight - 200) {
             nextPage();
+            let mybutton = document.getElementById("myBtn");
+            mybutton.style.display = "block";
+        }
+
+        //TODO does not work
+        if ((window.innerHeight + Math.ceil(window.pageYOffset)) <= 500) {
+            nextPage();
+            let mybutton = document.getElementById("myBtn");
+            mybutton.style.display = "none";
         }
     };
 
@@ -69,6 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
         clearFilters();
     })
 })
+function topFunction() {
+    let mybutton = document.getElementById("myBtn");
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    mybutton.style.display = "none";
+}
 
 
 let currentPage = 1;
