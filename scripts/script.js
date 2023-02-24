@@ -87,7 +87,6 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     topBtn.style.display = "none";
 }
-//TODO it does not want to work
 function assignFilters() {
     document.getElementById("radioAlive").onclick = function () { updateFilters(); };
     document.getElementById("radioDead").onclick = function () { updateFilters(); };
