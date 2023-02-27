@@ -77,6 +77,15 @@ document.addEventListener('DOMContentLoaded', function() {
         clearFilters();
     })
 
+    document.getElementById("header-filter-button").onclick = () => {
+        let currentVis = document.getElementById("body-mobile-filters").style.display;
+        if (currentVis == "block") {
+            document.getElementById("body-mobile-filters").style.display = "none";
+        } else {
+            document.getElementById("body-mobile-filters").style.display = "block";
+        }
+    }
+
     assignFilters();
 })
 function topFunction() {

@@ -95,8 +95,6 @@ main {
         display: block;
     }
 
-    .header-dropdown:hover .body-mobile-filters {display: block;}
-
     .body-mobile-filters {
         display: none;
     }
@@ -137,10 +135,6 @@ button {
     padding: 15px;
     border-radius: 15px;
     border: none;
-}
-
-button:hover {
-    color: #efdfd4;
 }
 
 #topBtn {
