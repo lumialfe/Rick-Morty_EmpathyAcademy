@@ -41,6 +41,7 @@ function clearFilters() {
     document.getElementById("filters").reset();
     currentGender = "";
     currentStatus = "";
+    document.getElementById("nCols").value = 4
     showCharacters();
 }
 const debounce = (func, delay) => {
@@ -92,12 +93,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    let cards = document.getElementsByClassName("main-card");
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].onmouseover = () => {
-
-        }
+    for (let i = 2; i < 8; i++) {
+        document.getElementById("nCols").innerHTML += "<option value='" + i + "'>" + i + "</option>";
     }
+
+    document.getElementById("nCols").onchange = () => {
+        let val = (
+            "repeat(" +
+            String(document.getElementById("nCols").value)
+            + ", minmax(50px, 1fr))");
+        document.getElementById("characters").style.gridTemplateColumns = val;
+    }
+
+    document.getElementById("nCols").value = 4
 
     assignFilters();
 })
