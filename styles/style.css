@@ -129,6 +129,15 @@ main {
     text-align: left;
 }
 
+.card-extradesc {
+    display: none;
+    text-align: left;
+}
+
+.main-card:hover > .card-extradesc {
+    display: block;
+}
+
 button {
     background-color: white;
     width: 100%;

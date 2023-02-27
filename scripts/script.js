@@ -14,10 +14,13 @@ function showCharacters() {
 }
 
 function getCharacterCard(character) {
-    let img = "<img class='card-image' src='" + character.image + "' alt='" + character.name + "'/>"
+    let img = "<img class='card-image' loading='lazy' src='" + character.image + "' alt='" + character.name + "'/>"
     let name = "<p class='card-name'>" + character.name + "</p>"
     let description = "<p class='card-text'>Gender: " + character.gender + "<br/>"
         + "Status: " + character.status + "</br>"
+        + "</p>"
+        + "<p class='card-extradesc'>" + "Species: " + character.species + "<br/>"
+            + "Origin: " + character.origin.name + "<br/>"
         + "</p>"
     return "<div class='main-card'>" + img + name + description + "</div>"
 }
@@ -83,6 +86,13 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("body-mobile-filters").style.display = "none";
         } else {
             document.getElementById("body-mobile-filters").style.display = "block";
+        }
+    }
+
+    let cards = document.getElementsByClassName("main-card");
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].onmouseover = () => {
+
         }
     }
 
