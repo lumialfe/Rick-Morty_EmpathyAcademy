@@ -86,14 +86,13 @@ function topFunction() {
     topBtn.style.display = "none";
 }
 function assignFilters() {
-    document.getElementById("radioAlive").onclick = function () { updateFilters(); };
-    document.getElementById("radioDead").onclick = function () { updateFilters(); };
-    document.getElementById("radioMale").onclick = function () { updateFilters(); };
-    document.getElementById("radioFemale").onclick = function () { updateFilters(); };
-    document.getElementById("radioAliveMob").onclick = function () { updateFilters(); };
-    document.getElementById("radioDeadMob").onclick = function () { updateFilters(); };
-    document.getElementById("radioMaleMob").onclick = function () { updateFilters(); };
-    document.getElementById("radioFemaleMob").onclick = function () { updateFilters(); };
+
+    let radios = document.getElementsByTagName('input');
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].type == 'radio') {
+            radios[i].onclick = function () { updateFilters(); };
+        }
+    }
 }
 
 function updateFilters() {

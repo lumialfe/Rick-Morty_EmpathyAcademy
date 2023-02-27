@@ -15,27 +15,30 @@
     <label for="searchBar"></label>
     <input id="searchBar" class="header-searchbar" type="text" placeholder="Find a Character..."/>
 </header>
-<div class="body-mobile-filters">
-    <h3>Filter by:</h3>
-    <hr/>
-    <form id="filtersMob">
-        <h4>Gender</h4>
-        <input id = "radioMaleMob" class="aside-filters" type="radio" name="gender"/>
-        <label for="radioMale">Male</label>
-        <br/>
-        <input id = "radioFemaleMob" class="aside-filters" type="radio" name="gender"/>
-        <label for="radioFemale">Female</label>
-
-        <h4>Status</h4>
-        <input id="radioAliveMob" class="aside-filters" type="radio" name="status"/>
-        <label for="radioAlive">Alive</label>
-        <br/>
-        <input id="radioDeadMob" class="aside-filters" type="radio" name="status"/>
-        <label for="radioDead">Dead</label>
+<div class="header-dropdown">
+    <button>Filter</button>
+    <div class="body-mobile-filters">
         <hr/>
-        <button id="aside-buttonMob">Clear All</button>
-    </form>
+        <form id="filtersMob">
+            <h4>Gender</h4>
+            <input id = "radioMaleMob" class="aside-filters" type="radio" name="gender"/>
+            <label for="radioMale">Male</label>
+            <input id = "radioFemaleMob" class="aside-filters" type="radio" name="gender"/>
+            <label for="radioFemale">Female</label>
+
+            <h4>Status</h4>
+            <input id="radioAliveMob" class="aside-filters" type="radio" name="status"/>
+            <label for="radioAlive">Alive</label>
+            <input id="radioDeadMob" class="aside-filters" type="radio" name="status"/>
+            <label for="radioDead">Dead</label>
+
+            <hr/>
+
+            <button id="aside-buttonMob">Clear All</button>
+        </form>
+    </div>
 </div>
+
 <div class="body-main">
     <aside>
         <h3>Filter by:</h3>
