@@ -77,6 +77,19 @@ main {
     aside {
         display: none;
     }
+
+    body {
+        grid-template-rows: 1fr auto auto;
+        grid-template-areas:
+            "header"
+            "mobilefilters"
+            "bodymain";
+    }
+
+    .body-mobile-filters {
+        grid-area: mobilefilters;
+        display: block;
+    }
 }
 
 .main-card {
@@ -138,4 +151,8 @@ button:hover {
 #topBtn:hover {
     width: 55px;
     height: 55px;
+}
+
+.body-mobile-filters {
+
 }

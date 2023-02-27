@@ -61,15 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
      * Infinite Scrolling
      */
     window.onscroll = () => {
-        if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight - 200) {
+        if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight - 300) {
             nextPage();
             let topBtn = document.getElementById("topBtn");
             topBtn.style.display = "block";
         }
 
-        //TODO does not work
-        if ((window.innerHeight + Math.ceil(window.pageYOffset)) <= 500) {
-            nextPage();
+        if (document.documentElement.scrollTop <= 50) {
             let topBtn = document.getElementById("topBtn");
             topBtn.style.display = "none";
         }
@@ -92,21 +90,25 @@ function assignFilters() {
     document.getElementById("radioDead").onclick = function () { updateFilters(); };
     document.getElementById("radioMale").onclick = function () { updateFilters(); };
     document.getElementById("radioFemale").onclick = function () { updateFilters(); };
+    document.getElementById("radioAliveMob").onclick = function () { updateFilters(); };
+    document.getElementById("radioDeadMob").onclick = function () { updateFilters(); };
+    document.getElementById("radioMaleMob").onclick = function () { updateFilters(); };
+    document.getElementById("radioFemaleMob").onclick = function () { updateFilters(); };
 }
 
 function updateFilters() {
     currentPage = 1;
     document.getElementById("characters").innerHTML = "";
 
-    if (document.getElementById("radioAlive").checked) {
+    if (document.getElementById("radioAlive").checked || document.getElementById("radioAliveMob").checked) {
         currentStatus = "alive";
-    } else if (document.getElementById("radioDead").checked) {
+    } else if (document.getElementById("radioDead").checked || document.getElementById("radioDeadMob").checked) {
         currentStatus = "dead";
     }
 
-    if (document.getElementById("radioMale").checked) {
+    if (document.getElementById("radioMale").checked || document.getElementById("radioMaleMob").checked) {
         currentGender = "male";
-    } else if (document.getElementById("radioFemale").checked) {
+    } else if (document.getElementById("radioFemale").checked || document.getElementById("radioFemaleMob").checked) {
         currentGender = "female";
     }
 
