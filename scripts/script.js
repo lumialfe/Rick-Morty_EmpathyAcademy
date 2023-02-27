@@ -66,13 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
     window.onscroll = () => {
         if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight - 300) {
             nextPage();
-            let topBtn = document.getElementById("topBtn");
-            topBtn.style.display = "block";
         }
 
         if (document.documentElement.scrollTop <= 50) {
             let topBtn = document.getElementById("topBtn");
             topBtn.style.display = "none";
+        }
+
+        if (document.documentElement.scrollTop >= 500) {
+            let topBtn = document.getElementById("topBtn");
+            topBtn.style.display = "block";
         }
     };
 
