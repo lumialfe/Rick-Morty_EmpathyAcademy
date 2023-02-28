@@ -15,8 +15,6 @@ function showCharacters() {
 
 function getCharacterCard(character) {
 
-
-
     let img = "<img class='card-image' loading='lazy' src='" + character.image + "' alt='" + character.name + "'/>"
     let name = "<p class='card-name'>" + character.name + "</p>"
     let description = "<p class='card-text'>Gender: " + character.gender + "<br/>"
@@ -27,7 +25,7 @@ function getCharacterCard(character) {
     let tooltip = "<p class='card-extradesc'>" + "Species: " + character.species + "<br/>"
         + "Origin: " + character.origin.name + "<br/>"
         + "</p>"
-    return "<div class='main-card'>" + img + name + description + tooltip + "</div>"
+    return "<div class='main-card'>" + img + tooltip + name + description + "</div>"
 }
 
 function searchName() {
@@ -46,7 +44,7 @@ function clearFilters() {
     document.getElementById("filters").reset();
     currentGender = "";
     currentStatus = "";
-    document.getElementById("nCols").value = 4
+    document.getElementById("nCols").value = 5;
     showCharacters();
 }
 const debounce = (func, delay) => {
@@ -98,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    for (let i = 2; i < 8; i++) {
+    for (let i = 4; i < 9; i++) {
         document.getElementById("nCols").innerHTML += "<option value='" + i + "'>" + i + "</option>";
     }
 
@@ -110,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("characters").style.gridTemplateColumns = val;
     }
 
-    document.getElementById("nCols").value = 4
+    document.getElementById("nCols").value = 5
 
     assignFilters();
 })
