@@ -14,15 +14,20 @@ function showCharacters() {
 }
 
 function getCharacterCard(character) {
+
+
+
     let img = "<img class='card-image' loading='lazy' src='" + character.image + "' alt='" + character.name + "'/>"
     let name = "<p class='card-name'>" + character.name + "</p>"
     let description = "<p class='card-text'>Gender: " + character.gender + "<br/>"
         + "Status: " + character.status + "</br>"
         + "</p>"
-        + "<p class='card-extradesc'>" + "Species: " + character.species + "<br/>"
-            + "Origin: " + character.origin.name + "<br/>"
+
+
+    let tooltip = "<p class='card-extradesc'>" + "Species: " + character.species + "<br/>"
+        + "Origin: " + character.origin.name + "<br/>"
         + "</p>"
-    return "<div class='main-card'>" + img + name + description + "</div>"
+    return "<div class='main-card'>" + img + name + description + tooltip + "</div>"
 }
 
 function searchName() {
