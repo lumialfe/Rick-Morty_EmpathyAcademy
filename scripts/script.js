@@ -25,7 +25,7 @@ function getCharacterCard(character) {
     let tooltip = "<p class='card-extradesc'>" + "Species: " + character.species + "<br/>"
         + "Origin: " + character.origin.name + "<br/>"
         + "</p>"
-    return "<div class='main-card'>" + img + tooltip + name + description + "</div>"
+    return "<div class='main-card'>" + img  + name + description + tooltip + "</div>"
 }
 
 function searchName() {

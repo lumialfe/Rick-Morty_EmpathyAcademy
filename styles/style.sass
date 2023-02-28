@@ -1,0 +1,148 @@
+body
+  background-color: #fff3e5
+  font-family: "Montserrat", sans-serif
+  margin: 0
+  text-align: center
+  display: grid
+  grid-template-rows: 1fr auto
+  grid-row-gap: 1vw
+  grid-template-areas: "header" "bodymain"
+
+header
+  grid-area: header
+  background-color: #efdfd4
+  padding: 0 2vw
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+
+.header-image 
+  width: 8rem
+
+
+.header-searchbar 
+  width: 40vw
+  border-radius: 500px
+  height: auto
+  padding: 1rem 2rem
+  border: none
+
+  text-align: right
+
+  background: white url("../media/search-icon.svg") no-repeat 15px center
+  background-size: 1rem
+
+  font-family: "Montserrat", sans-serif
+
+.header-dropdown 
+  display: none
+
+.body-main
+  grid-area: bodymain
+  display: grid
+  grid-template-columns: 10% auto
+  grid-column-gap: 1vw
+  grid-row-gap: 1vw
+  padding: 0vh 1vw
+
+aside
+  text-align: left
+  background-color: #efdfd4
+  padding: 1vh 1vw
+  border-radius: 25px
+  height: fit-content
+
+main
+  display: grid
+  grid-template-columns: repeat(5, minmax(50px, 1fr))
+  grid-row-gap: 3vh
+  grid-column-gap: 1vw
+
+@media only screen and (max-width: 640px)
+  main
+    grid-template-columns: repeat(2, minmax(50px, 1fr))
+
+  .body-main
+    grid-template-columns: 100%
+
+  aside
+    display: none
+
+  body
+    grid-template-rows: 1fr auto auto
+    grid-template-areas: "header" "mobilefilters" "bodymain"
+
+  .header-dropdown
+    grid-area: mobilefilters
+    display: block
+
+  .body-mobile-filters
+    display: none
+
+.main-card 
+  padding: 2vh 1vw
+  background-color: white
+  justify-content: center
+  display: grid
+  grid-template-areas: "image" "name" "text"
+  border-radius: 25px
+
+
+.card-image 
+  grid-area: image
+  width: 100%
+  border-radius: 25px
+
+
+.card-name 
+  grid-area: name
+  font-size: 150%
+
+
+.card-text 
+  grid-area: text
+
+
+.card-extradesc 
+  display: none
+  grid-area: text
+
+
+.main-card:hover > .card-extradesc 
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+
+
+.main-card:hover > .card-text 
+  display: none
+
+
+button 
+  background-color: white
+  width: 100%
+  padding: 15px
+  border-radius: 15px
+  border: none
+
+
+#topBtn 
+  width: 50px
+  height: 50px
+  padding: 0
+  display: none /* Hidden by default */
+  position: fixed /* Fixed/sticky position */
+  bottom: 20px /* Place the button at the bottom of the page */
+  left: 30px /* Place the button 30px from the right */
+  z-index: 99 /* Make sure it does not overlap */
+  border: none /* Remove borders */
+  outline: none /* Remove outline */
+  background: url("../media/backtop.png") no-repeat center
+  background-size: cover
+
+
+#topBtn:hover 
+  width: 55px
+  height: 55px
