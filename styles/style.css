@@ -45,7 +45,7 @@ header {
   grid-template-columns: 10% auto;
   grid-column-gap: 1vw;
   grid-row-gap: 1vw;
-  padding: 0vh 1vw;
+  padding: 0 1vw;
 }
 
 aside {
@@ -115,8 +115,10 @@ main {
 }
 
 .main-card:hover > .card-extradesc {
-  grid-area: text;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .main-card:hover > .card-text {
