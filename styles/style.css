@@ -115,10 +115,8 @@ main {
 }
 
 .main-card:hover > .card-extradesc {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  grid-area: text;
+  display: block;
 }
 
 .main-card:hover > .card-text {
