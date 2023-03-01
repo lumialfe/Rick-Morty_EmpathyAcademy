@@ -6,7 +6,7 @@ function showCharacters() {
             return response.json();
         })
         .then(function (json) {
-            for(let i = 0; i < json.results.length; i++) {
+            for (let i = 0; i < json.results.length; i++) {
                 document.getElementById("characters").innerHTML += getCharacterCard(json.results[i]);
             }
             currentPage++
@@ -25,7 +25,7 @@ function getCharacterCard(character) {
     let tooltip = "<p class='card-extradesc'>" + "Species: " + character.species + "<br/>"
         + "Origin: " + character.origin.name + "<br/>"
         + "</p>"
-    return "<div class='main-card'>" + img  + name + description + tooltip + "</div>"
+    return "<div class='main-card'>" + img + name + description + tooltip + "</div>"
 }
 
 function searchName() {
@@ -47,9 +47,10 @@ function clearFilters() {
     document.getElementById("nCols").value = 5;
     showCharacters();
 }
+
 const debounce = (func, delay) => {
     let debounceTimer
-    return function() {
+    return function () {
         const context = this
         const args = arguments
         clearTimeout(debounceTimer)
@@ -58,9 +59,9 @@ const debounce = (func, delay) => {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let searchBar = document.getElementById("searchBar");
-    searchBar.addEventListener('input', debounce(function() {
+    searchBar.addEventListener('input', debounce(function () {
         searchName();
     }, 250));
 
@@ -112,18 +113,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     assignFilters();
 })
+
 function topFunction() {
     let topBtn = document.getElementById("topBtn");
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     topBtn.style.display = "none";
 }
+
 function assignFilters() {
 
     let radios = document.getElementsByTagName('input');
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].type == 'radio') {
-            radios[i].onclick = function () { updateFilters(); };
+            radios[i].onclick = function () {
+                updateFilters();
+            };
         }
     }
 }
