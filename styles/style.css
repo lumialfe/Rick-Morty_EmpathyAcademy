@@ -63,28 +63,6 @@ main {
   grid-column-gap: 1vw;
 }
 
-@media only screen and (max-width: 640px) {
-  main {
-    grid-template-columns: repeat(2, minmax(50px, 1fr));
-  }
-  .body-main {
-    grid-template-columns: 100%;
-  }
-  aside {
-    display: none;
-  }
-  body {
-    grid-template-rows: 1fr auto auto;
-    grid-template-areas: "header" "mobilefilters" "bodymain";
-  }
-  .header-dropdown {
-    grid-area: mobilefilters;
-    display: block;
-  }
-  .body-mobile-filters {
-    display: none;
-  }
-}
 .main-card {
   padding: 2vh 1vw;
   background-color: white;
@@ -98,6 +76,7 @@ main {
   grid-area: image;
   width: 100%;
   border-radius: 25px;
+  margin-top: 1vh;
 }
 
 .card-name {
@@ -122,6 +101,34 @@ main {
   display: none;
 }
 
+@media only screen and (max-width: 640px) {
+  main {
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
+    grid-column-gap: 2vw;
+    grid-row-gap: 1vh;
+  }
+  .body-main {
+    grid-template-columns: 100%;
+  }
+  aside {
+    display: none;
+  }
+  body {
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas: "header" "mobilefilters" "bodymain";
+  }
+  .header-dropdown {
+    grid-area: mobilefilters;
+    display: block;
+  }
+  .body-mobile-filters {
+    display: none;
+  }
+  .card-image {
+    max-width: 90%;
+    margin: 0px auto auto;
+  }
+}
 button {
   background-color: white;
   width: 100%;

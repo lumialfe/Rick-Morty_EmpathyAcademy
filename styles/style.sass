@@ -58,9 +58,42 @@ main
   grid-row-gap: 3vh
   grid-column-gap: 1vw
 
+.main-card
+  padding: 2vh 1vw
+  background-color: white
+  justify-content: center
+  display: grid
+  grid-template-areas: "image" "name" "text"
+  border-radius: 25px
+
+.card-image
+  grid-area: image
+  width: 100%
+  border-radius: 25px
+  margin-top: 1vh
+
+.card-name
+  grid-area: name
+  font-size: 150%
+
+.card-text
+  grid-area: text
+
+.card-extradesc
+  display: none
+  grid-area: text
+
+.main-card:hover > .card-extradesc
+  display: block
+
+.main-card:hover > .card-text
+  display: none
+
 @media only screen and (max-width: 640px)
   main
     grid-template-columns: repeat(2, minmax(50px, 1fr))
+    grid-column-gap: 2vw
+    grid-row-gap: 1vh
 
   .body-main
     grid-template-columns: 100%
@@ -79,35 +112,9 @@ main
   .body-mobile-filters
     display: none
 
-.main-card
-  padding: 2vh 1vw
-  background-color: white
-  justify-content: center
-  display: grid
-  grid-template-areas: "image" "name" "text"
-  border-radius: 25px
-
-.card-image
-  grid-area: image
-  width: 100%
-  border-radius: 25px
-
-.card-name
-  grid-area: name
-  font-size: 150%
-
-.card-text
-  grid-area: text
-
-.card-extradesc
-  display: none
-  grid-area: text
-
-.main-card:hover > .card-extradesc
-  display: block
-
-.main-card:hover > .card-text
-  display: none
+  .card-image
+    max-width: 90%
+    margin: 0px auto auto
 
 button
   background-color: white
